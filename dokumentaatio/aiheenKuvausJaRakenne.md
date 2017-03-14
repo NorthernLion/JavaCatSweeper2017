@@ -1,4 +1,6 @@
 **Aihe**
+
+
 CatSweeperi on minesweeper peli, jossa miinat on korvattu kissoilla ja äänet on muokattu hyväksyttäviksi.
 Pelaaja voi valita eri kokoisista kartoista (small, medium, large). Pelaaminen toimii kuten normaalissa minesweepperissä.
 Kun pelaaja valitsee ruudun, jossa on kissa, hän häviää (ja hänet raadellaan julmasti). Jos ruudussa ei ole kissaa
