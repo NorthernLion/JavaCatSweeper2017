@@ -3,5 +3,5 @@
 
 ## Dokumentaatio
 
-* [Aihemäärittely](dokumentaation/aihemaarittely.md)
+* [Aihemäärittely](dokumentaation/aiheenKuvausJaRakenne.md)
 * [Tuntikirjanpito](dokumentaation/tuntikirjanpito.md)
