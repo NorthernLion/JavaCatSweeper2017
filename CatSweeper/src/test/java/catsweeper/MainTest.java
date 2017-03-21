@@ -9,7 +9,4 @@ import static org.junit.Assert.*;
 
 public class MainTest {
 
-    @Test
-    public void hello() {}
-
 }
