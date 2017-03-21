@@ -20,5 +20,6 @@ Pelin loputtua highscore otetaan ylös, joka lasketaan erikseen jokaiselle karta
  * kissa
 * Pause peli
 
+**Luokkakaavio**:
 
 ![Luokkakaavio puuttuu kuvat tiedostosta, korjataan pian!](/dokumentaatio/kuvat/LuokkaKaavioJava.png)
