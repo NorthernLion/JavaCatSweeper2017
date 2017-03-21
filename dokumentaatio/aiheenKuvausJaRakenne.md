@@ -16,8 +16,8 @@ Pelin loputtua highscore otetaan ylös, joka lasketaan erikseen jokaiselle karta
 * Aloita peli
 * Katso highscoret
 * Valitse ruutu, joka on
- * tyhjä
- * kissa
+  * tyhjä
+  * kissa
 * Pause peli
 
 **Luokkakaavio**
