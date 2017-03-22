@@ -11,9 +11,11 @@ package catsweeper.logiikka;
  */
 public class Mine extends Tile {
 
-    public Mine(int x, int y) {
-        super(x, y);
+    public Mine() {
+        super(0, 0);
     }
+
+
     
     
     

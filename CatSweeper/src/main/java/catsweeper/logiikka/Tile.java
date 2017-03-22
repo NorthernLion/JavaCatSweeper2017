@@ -10,13 +10,19 @@ package catsweeper.logiikka;
  * @author Pesonen
  */
 public class Tile {
-    
+
+    private int value;
     private int x;
     private int y;
+    private boolean revealed;
+    private boolean flagged;
 
     public Tile(int x, int y) {
         this.x = x;
         this.y = y;
+        this.revealed = false;
+        this.flagged = false;
+        this.value = 0;
     }
 
     public int getX() {
@@ -35,14 +41,48 @@ public class Tile {
         this.y = y;
     }
 
+    public void flag() {
+        flagged = true;
+    }
+
+    public boolean isFlagged() {
+        return flagged;
+    }
+
+    public void setValue(int given) {
+        if (0 <= given && given <= 9) {
+            value = given;
+        }
+
+    }
+
+    public boolean isRevealed() {
+        return revealed;
+    }
+
+    public void reveal() {
+        revealed = true;
+    }
+
+    public boolean isBomb() {
+        if (value == 9) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void setBomb() {
+        value = 9;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return "(" + x + "," + y + ")";
     }
-    
-    
-    
-    
-    
-    
+
 }

@@ -5,26 +5,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
+public class MineSweeperGame {
 
-public class MineSweeperGame extends Timer implements ActionListener {
-    
     private int leveys;
     private int korkeus;
-    
+    private boolean running;
+    private int timer;
+
     public MineSweeperGame(int leveys, int korkeus) {
-        super(1000, null);
+        this.running = false;
+        this.timer = 0;
     }
 
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void gameLoop() {
+        while (running) {
+            System.out.println("Olen paras");
+        }
     }
-    //Game looppi?
 
-
-
-
-    
-    
-    
 }
