@@ -9,14 +9,6 @@ package catsweeper.logiikka;
  *
  * @author Pesonen
  */
-public class Mine extends Tile {
-
-    public Mine() {
-        super(0, 0);
-    }
-
-
-    
-    
+public class MineSweeperGameTest {
     
 }

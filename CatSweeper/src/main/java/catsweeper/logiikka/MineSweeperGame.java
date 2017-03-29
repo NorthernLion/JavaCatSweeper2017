@@ -7,14 +7,16 @@ import javax.swing.Timer;
 
 public class MineSweeperGame {
 
-    private int leveys;
-    private int korkeus;
     private boolean running;
     private int timer;
+    private MineField field;
+    private int size;
 
-    public MineSweeperGame(int leveys, int korkeus) {
+    public MineSweeperGame(int size) {
+        this.size = size;
         this.running = false;
         this.timer = 0;
+        this.field = new MineField(size);
     }
 
     public void gameLoop() {
@@ -22,5 +24,17 @@ public class MineSweeperGame {
             System.out.println("Olen paras");
         }
     }
+
+    public MineField getField() {
+        return field;
+    }
+
+    public int getSize() {
+        return size;
+    }
+    
+    
+    
+    
 
 }

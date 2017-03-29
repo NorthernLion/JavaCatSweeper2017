@@ -5,6 +5,9 @@
  */
 package catsweeper.gui;
 
+import catsweeper.logiikka.MineField;
+import catsweeper.logiikka.MineSweeperGame;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -14,17 +17,37 @@ import javax.swing.JPanel;
 public class UserInterface implements Runnable {
     
     private boolean gameActive;
+    private ButtonMouseListener listener;
+    private int size;
+    private JFrame frame;
+    private MineSweeperGame game;
+    private MineField field;
 
-    @Override
-    public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public UserInterface(MineSweeperGame game) {
+        this.size = game.getSize();
+        this.game = game;
+        this.field = game.getField();
     }
     
     
     
+    
+
+    @Override
+    public void run() {
+        frame = new JFrame("CatSweeper");
+        System.out.println("huhuhu");
+    }
+    
+   
+    
+    private JPanel createButtons(JPanel panel) {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+            }
+        }
+        return panel;
+    }
+    
+    
 }
-
-
-
-//perus grafiikat täällä
-//J panelia ja sillei

@@ -9,14 +9,6 @@ package catsweeper.logiikka;
  *
  * @author Pesonen
  */
-public class Empty extends Tile {
-
-    public Empty() {
-        super(0, 0);
-    }
-
-
-    
-    
+public class MineFieldTest {
     
 }

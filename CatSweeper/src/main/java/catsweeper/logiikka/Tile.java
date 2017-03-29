@@ -5,11 +5,13 @@
  */
 package catsweeper.logiikka;
 
+import java.util.Observable;
+
 /**
  *
  * @author Pesonen
  */
-public class Tile {
+public class Tile extends Observable{ 
 
     private int value;
     private int x;
@@ -42,7 +44,9 @@ public class Tile {
     }
 
     public void flag() {
-        flagged = true;
+        if(!this.isRevealed()) {
+            flagged = true;
+        }
     }
 
     public boolean isFlagged() {
@@ -59,9 +63,16 @@ public class Tile {
     public boolean isRevealed() {
         return revealed;
     }
-
-    public void reveal() {
-        revealed = true;
+// Reveal false = clickasit pommia
+    //true = kaikki OK!
+    public boolean reveal() {
+        if (!this.isRevealed()) {
+            revealed = true;
+            if(isBomb()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public boolean isBomb() {
