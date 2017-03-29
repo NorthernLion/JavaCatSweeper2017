@@ -22,4 +22,4 @@ Pelin loputtua highscore otetaan ylös, joka lasketaan erikseen jokaiselle karta
 
 **Luokkakaavio**
 
-![Luokkakaavio puuttuu kuvat tiedostosta, korjataan pian!](/dokumentaatio/kuvat/LuokkaKaavioJava.png)
+![Luokkakaavio puuttuu kuvat tiedostosta, korjataan pian!](/dokumentaatio/kuvat/JAVALuokkaKaavio.png)
