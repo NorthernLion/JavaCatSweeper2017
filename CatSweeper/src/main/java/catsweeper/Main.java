@@ -7,7 +7,7 @@ import catsweeper.logiikka.MineSweeperGame;
 public class Main {
     
     public static void main(String[] args) {
-        MineSweeperGame game = new MineSweeperGame(0);
+        MineSweeperGame game = new MineSweeperGame();
         UserInterface inteface = new UserInterface(game);
         
     }

@@ -4,16 +4,16 @@ import java.util.*;
 
 public class MineField {
 
-        private int size;
+    private int size;
     private Tile[][] field;
     private int bombs;
 
     public MineField(int size) {
         this.size = size;
-        this.bombs = size/8;
+        this.bombs = size / 8;
         this.field = new Tile[size][size];
-        fieldInitializeBombs();
-        fieldInitializeNumbers();
+        //fieldInitializeBombs();
+        //fieldInitializeNumbers();
     }
 
     // Testi mielessä tehtyä koodia
@@ -56,6 +56,10 @@ public class MineField {
 
     public Tile[][] getField() {
         return field;
+    }
+
+    public int getSize() {
+        return size;
     }
     
     

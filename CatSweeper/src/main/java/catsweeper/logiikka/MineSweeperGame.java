@@ -12,8 +12,8 @@ public class MineSweeperGame {
     private MineField field;
     private int size;
 
-    public MineSweeperGame(int size) {
-        this.size = size;
+    public MineSweeperGame() {
+        this.size = 10;
         this.running = false;
         this.timer = 0;
         this.field = new MineField(size);
@@ -32,9 +32,5 @@ public class MineSweeperGame {
     public int getSize() {
         return size;
     }
-    
-    
-    
-    
 
 }

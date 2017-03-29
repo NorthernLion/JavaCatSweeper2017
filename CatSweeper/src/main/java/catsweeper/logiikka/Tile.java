@@ -11,7 +11,7 @@ import java.util.Observable;
  *
  * @author Pesonen
  */
-public class Tile extends Observable{ 
+public class Tile extends Observable {
 
     private int value;
     private int x;
@@ -44,7 +44,7 @@ public class Tile extends Observable{
     }
 
     public void flag() {
-        if(!this.isRevealed()) {
+        if (!this.isRevealed()) {
             flagged = true;
         }
     }
@@ -65,10 +65,11 @@ public class Tile extends Observable{
     }
 // Reveal false = clickasit pommia
     //true = kaikki OK!
+
     public boolean reveal() {
         if (!this.isRevealed()) {
             revealed = true;
-            if(isBomb()) {
+            if (isBomb()) {
                 return false;
             }
         }

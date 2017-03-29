@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  * @author Pesonen
  */
 public class UserInterface implements Runnable {
-    
+
     private boolean gameActive;
     private ButtonMouseListener listener;
     private int size;
@@ -28,26 +28,24 @@ public class UserInterface implements Runnable {
         this.game = game;
         this.field = game.getField();
     }
-    
-    
-    
-    
 
     @Override
     public void run() {
         frame = new JFrame("CatSweeper");
         System.out.println("huhuhu");
     }
-    
-   
-    
+
     private JPanel createButtons(JPanel panel) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
+                System.out.println("hi");
+     /**
+ *
+ * buttoneiden luonti!
+ */          
             }
         }
         return panel;
     }
-    
-    
+
 }

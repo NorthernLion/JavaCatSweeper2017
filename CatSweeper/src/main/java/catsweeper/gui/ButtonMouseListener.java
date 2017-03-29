@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
  * @author Pesonen
  */
 public class ButtonMouseListener implements MouseListener {
-    
+
     private Tile tile;
 
     public ButtonMouseListener(Tile tile) {
@@ -24,18 +24,22 @@ public class ButtonMouseListener implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent me) {
-        if(SwingUtilities.isLeftMouseButton(me)) {
+        if (SwingUtilities.isLeftMouseButton(me)) {
+            System.out.println("hi");
             //Reveal, pitää tehdä game tasolla?
         } else if (SwingUtilities.isRightMouseButton(me)) {
-           //flag tile tasolla?
+            System.out.println("hi");
+            //flag tile tasolla?
         }
     }
 
     @Override
-    public void mousePressed(MouseEvent me) {}
+    public void mousePressed(MouseEvent me) {
+    }
 
     @Override
-    public void mouseReleased(MouseEvent me) {}
+    public void mouseReleased(MouseEvent me) {
+    }
 
     @Override
     public void mouseEntered(MouseEvent me) {
@@ -44,11 +48,7 @@ public class ButtonMouseListener implements MouseListener {
     @Override
     public void mouseExited(MouseEvent me) {
     }
-    
-    
 
-
-    
 }
 
 //Listeneri

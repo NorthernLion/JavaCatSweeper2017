@@ -6,8 +6,8 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JButton;
 
-public class TileObserver extends JButton implements Observer{
-    
+public class TileObserver extends JButton implements Observer {
+
     private Tile tile;
 
     public TileObserver(Tile tile) {
@@ -16,15 +16,11 @@ public class TileObserver extends JButton implements Observer{
         super.setBackground(Color.gray);
         setOpaque(true);
     }
-    
-    
 
     @Override
     public void update(Observable o, Object o1) {
-        
+
         this.setText(Integer.toString(tile.getValue()));
     }
-    
-    
-    
+
 }

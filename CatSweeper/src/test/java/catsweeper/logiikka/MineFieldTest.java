@@ -5,10 +5,25 @@
  */
 package catsweeper.logiikka;
 
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
+
 /**
  *
  * @author Pesonen
  */
 public class MineFieldTest {
-    
+
+    MineField readyMade;
+
+    @Before
+    public void setUp() {
+        readyMade = new MineField(20);
+    }
+
+    @Test
+    public void constructorSetsCoordinatesXAndYRight() {
+
+    }
 }

@@ -5,10 +5,25 @@
  */
 package catsweeper.logiikka;
 
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
+
 /**
  *
  * @author Pesonen
  */
 public class MineSweeperGameTest {
-    
+
+    MineSweeperGame readyMade;
+
+    @Before
+    public void setUp() {
+        readyMade = new MineSweeperGame();
+    }
+
+    @Test
+    public void sizeInGameAndFieldAreTheSame() {
+        assertEquals(readyMade.getField().getSize(), readyMade.getSize());
+    }
 }
