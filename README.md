@@ -8,6 +8,6 @@
 * [Käyttöohjeet](dokumentaatio/käyttöohjeet.md)
 * [Testausdokumentti](dokumentaatio/testausdokumentti.md)
 
-## Raportit // Kesken ei toimi!
-* [Pit](dokumentaatio/testausdokumentti.md)
-* [CheckStyle](dokumentaatio/testausdokumentti.md)
+## Raportit
+* [Pit](https://htmlpreview.github.io/?https://github.com/NorthernLion/JavaCatSweeper2017/blob/master/dokumentaatio/pit-raportti/201703221910/index.html)
+* [CheckStyle](https://htmlpreview.github.io/?https://github.com/NorthernLion/JavaCatSweeper2017/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)
