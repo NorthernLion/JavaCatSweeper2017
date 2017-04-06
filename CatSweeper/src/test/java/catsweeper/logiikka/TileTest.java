@@ -29,20 +29,16 @@ public class TileTest {
 
         String answer = tile.toString();
 
-        assertEquals("(1,2)", answer);
+        assertTrue(tile.getX()==1 && tile.getY()==2);
     }
-    //Getterit ja setteri testit laajennetaan testaamaan rajatapauksia esim negatiivisia arvoja myöhemmin
-
+    
     @Test
     public void setsCoordinatesRight() {
         readyMade.setX(1);
         readyMade.setY(5);
+        assertTrue(readyMade.getX()==1 && readyMade.getY()==5);
 
-        String answer = readyMade.toString();
-
-        assertEquals("(1,5)", answer);
     }
-
     @Test
     public void getsXRight() {
         assertTrue(readyMade.getY() == 2);
@@ -81,6 +77,12 @@ public class TileTest {
     public void revealedTileIsRevealed() {
         readyMade.reveal();
         assertTrue(readyMade.isRevealed());
+    }
+    
+    @Test
+    public void revealingBombReturnFalse() {
+        readyMade.setBomb();
+        assertTrue(!readyMade.reveal());
     }
 
     @Test

@@ -1,51 +1,50 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package catsweeper.gui;
 
-import catsweeper.logiikka.MineField;
 import catsweeper.logiikka.MineSweeperGame;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 /**
+ * Luokka on Interface, joka huolehtii projektin grafiikka puolesta. Se alustaa
+ * pelin pää framen, sekä jokaisen ruudun omaksi buttonikseen.
  *
- * @author Pesonen
  */
 public class UserInterface implements Runnable {
 
-    private boolean gameActive;
-    private ButtonMouseListener listener;
-    private int size;
     private JFrame frame;
     private MineSweeperGame game;
-    private MineField field;
+    private JButton[][] squares;
 
     public UserInterface(MineSweeperGame game) {
-        this.size = game.getSize();
         this.game = game;
-        this.field = game.getField();
+        this.squares = new JButton[game.getSize()][game.getSize()];
     }
 
     @Override
     public void run() {
-        frame = new JFrame("CatSweeper");
-        System.out.println("huhuhu");
+        this.frame = new JFrame("Catsweeper");
+        frame.setPreferredSize(new Dimension((60 * game.getSize()), (60 * game.getSize())));
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        createComponents(frame.getContentPane());
+        frame.pack();
+        frame.setVisible(true);
     }
 
-    private JPanel createButtons(JPanel panel) {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                System.out.println("hi");
-     /**
- *
- * buttoneiden luonti!
- */          
+    private void createComponents(Container container) {
+        container.setLayout(new GridLayout(game.getSize(), game.getSize()));
+
+        for (int x = 0; x < game.getSize(); x++) {
+            for (int y = 0; y < game.getSize(); y++) {
+                JButton button = new JButton();
+                squares[x][y] = button;
+                button.setText(game.getField().getBoard()[x][y].toString());
+                container.add(button);
+//              Listener
             }
         }
-        return panel;
     }
-
 }

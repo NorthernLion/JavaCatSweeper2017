@@ -5,6 +5,11 @@ import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JButton;
+/**
+ * Luokka on Observori Tile luokalle, joka extendaa JButtonia.
+ * Kun observoidussa luokassa tapahtuu muutos clickauksen seurauksena tämä metodi huolehtii sen päivittämisestä.
+ * Tämä luokka ei ole tällä hetkellä käytössä.
+ */
 
 public class TileObserver extends JButton implements Observer {
 

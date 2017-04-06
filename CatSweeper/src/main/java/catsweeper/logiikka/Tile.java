@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package catsweeper.logiikka;
 
 import java.util.Observable;
 
 /**
- *
- * @author Pesonen
+ * Luokka on ilmentymä miinaharavan ruudusta.
  */
+
 public class Tile extends Observable {
 
     private int value;
@@ -18,7 +13,10 @@ public class Tile extends Observable {
     private int y;
     private boolean revealed;
     private boolean flagged;
-
+/**
+ * @param x on ruudun x akselilla sijainti laudalla.
+ * @param y on ruudun y akselilla sijainti laudalla.
+ */
     public Tile(int x, int y) {
         this.x = x;
         this.y = y;
@@ -42,7 +40,9 @@ public class Tile extends Observable {
     public void setY(int y) {
         this.y = y;
     }
-
+/**
+ * Metodi asettaa ruudun tilan merkatuksi, jos sitä ei ole vielä paljastettu.
+ */
     public void flag() {
         if (!this.isRevealed()) {
             flagged = true;
@@ -52,7 +52,11 @@ public class Tile extends Observable {
     public boolean isFlagged() {
         return flagged;
     }
-
+/**
+ * Metodi asettaa ruudun arvon.
+ * Arvo 9 tarkoittaa miinaa 0-8 kuvaa viereisten miinojen määrää.
+ * @param given on annettu arvo, joka kuvaa viereisten miinojen määrää.
+ */
     public void setValue(int given) {
         if (0 <= given && given <= 9) {
             value = given;
@@ -63,9 +67,10 @@ public class Tile extends Observable {
     public boolean isRevealed() {
         return revealed;
     }
-// Reveal false = clickasit pommia
-    //true = kaikki OK!
-
+/**
+ * Metodi paljastaa ruudun, jos se ei ole vielä paljastettu.
+ * @return Epätosi jos pommi.
+ */
     public boolean reveal() {
         if (!this.isRevealed()) {
             revealed = true;
@@ -94,7 +99,7 @@ public class Tile extends Observable {
 
     @Override
     public String toString() {
-        return "(" + x + "," + y + ")";
+        return Integer.toString(value);
     }
 
 }
