@@ -8,8 +8,8 @@ Päivä | Aloitus | Lopetus | Tunnit | Kuvaus
 22.03.2017 | 17:00 | 19:15 | 08:45 | Viikko 2 Tehty loppuun testattu ruudukon tekoa 
 28.03.2017 | 17:10 | 22:25 | 14:00 | GUI suunnittelu, MouseListener, Observerit etc. 
 29.03.2017 | 09:00 | 11:00 | 16:00 | Testien teko, dokumentaation uudelleen kirjoitus, checkstyle ja pit generointi
-... | ... | ... | ... | -
-... | ... | ... | ... | -
+05.03.2017 | 18:00 | 20:00 | 18:00 | Gui ihmetteley
+06.03.2017 | 17:00 | ? | ... | Testaamisen parantaminen
 ... | ... | ... | ... | -
 ... | ... | ... | ... | -
 ... | ... | ... | ... | -
