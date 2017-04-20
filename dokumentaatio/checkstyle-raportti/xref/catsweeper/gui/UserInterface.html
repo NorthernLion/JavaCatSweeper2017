@@ -49,13 +49,12 @@
 <a class="jxr_linenumber" name="L41" href="#L41">41</a>              <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> y = 0; y &lt; game.getSize(); y++) {
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>                  JButton button = <strong class="jxr_keyword">new</strong> JButton();
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>                  squares[x][y] = button;
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>                  button.setText(game.getField().getBoard()[x][y].toString());
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>                  button.addMouseListener(<strong class="jxr_keyword">new</strong> <a href="../../catsweeper/gui/ButtonMouseListener.html">ButtonMouseListener</a>(x, y, squares, game));
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>                  container.add(button);
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>  <em class="jxr_comment">//                Listener</em>
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>              }
-<a class="jxr_linenumber" name="L48" href="#L48">48</a>          }
-<a class="jxr_linenumber" name="L49" href="#L49">49</a>      }
-<a class="jxr_linenumber" name="L50" href="#L50">50</a>  }
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>              }
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>          }
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>      }
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2017. All rights reserved.</div>

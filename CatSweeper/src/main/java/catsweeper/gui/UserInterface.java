@@ -41,9 +41,8 @@ public class UserInterface implements Runnable {
             for (int y = 0; y < game.getSize(); y++) {
                 JButton button = new JButton();
                 squares[x][y] = button;
-                button.setText(game.getField().getBoard()[x][y].toString());
+                button.addMouseListener(new ButtonMouseListener(x, y, squares, game));
                 container.add(button);
-//              Listener
             }
         }
     }

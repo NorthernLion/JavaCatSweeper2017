@@ -3,6 +3,7 @@ package catsweeper.logiikka;
 import catsweeper.gui.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 /**
  * Luokka on ilmentymä miinaharavasta, joka huolehtii pelin aloittamisesta ja resetoinnista.
@@ -15,7 +16,7 @@ public class MineSweeperGame {
     private int size;
 
     public MineSweeperGame() {
-        this.size = 10;
+        this.size = 26;
         //this.running = false;
         this.timer = 0;
         this.field = new MineField(size);
@@ -24,7 +25,9 @@ public class MineSweeperGame {
  * Metodi alustaa pelilaudan arvot.
  */
     
-    public void start() {        
+    public void start() {     
+        UserInterface inteface = new UserInterface(this);
+        SwingUtilities.invokeLater(inteface);
         field.initialize();
     }
 //
@@ -40,6 +43,10 @@ public class MineSweeperGame {
 
     public int getSize() {
         return size;
+    }
+    
+    public void reset() {
+        
     }
 
 }

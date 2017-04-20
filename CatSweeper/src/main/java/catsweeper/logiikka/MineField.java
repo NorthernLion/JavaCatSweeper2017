@@ -3,7 +3,8 @@ package catsweeper.logiikka;
 import java.util.*;
 
 /**
- * Luokka on ilmentymä laudasta suurin osa kaikesta sovelluslogiikasta tehdään lauta tasolla.
+ * Luokka on ilmentymä laudasta suurin osa kaikesta sovelluslogiikasta tehdään
+ * lauta tasolla.
  */
 public class MineField {
 
@@ -11,10 +12,11 @@ public class MineField {
     private Tile[][] board;
     private double chance;
     private Random random;
-/**
- * @param size on pelilaudan leveyttä ja pituutta kuvaava arvo.
- * Pelilauta on siis neliö.
- */
+
+    /**
+     * @param size on pelilaudan leveyttä ja pituutta kuvaava arvo. Pelilauta on
+     * siis neliö.
+     */
     public MineField(int size) {
         this.size = size;
         this.chance = 0.15;
@@ -22,10 +24,10 @@ public class MineField {
         random = new Random();
         //printout();
     }
-    
-/**
- * Metodi on laudan alustukseen käytettävä apumetodi.
- */    
+
+    /**
+     * Metodi on laudan alustukseen käytettävä apumetodi.
+     */
     public void initialize() {
         fieldInitializeBombs();
         fieldInitializeNumbers();
@@ -39,10 +41,10 @@ public class MineField {
 //            System.out.println("");
 //        }        
 //    }
-    
-/**
- * Metodi käy läpi laudan ja kutsuu Tilen alustavaa metodia ja asettaa pommit todennäköisyyden mukaan.
- */     
+    /**
+     * Metodi käy läpi laudan ja kutsuu Tilen alustavaa metodia ja asettaa
+     * pommit todennäköisyyden mukaan.
+     */
     public void fieldInitializeBombs() {
         Random random = new Random();
         for (int x = 0; x < size; x++) {
@@ -60,12 +62,14 @@ public class MineField {
     public void fieldInitializeTiles(int x, int y) {
         board[x][y] = new Tile(x, y);
     }
-/**
- * Metodi tekee annetusta ruudusta pommin
+
+    /**
+     * Metodi tekee annetusta ruudusta pommin
+     *
      * @param x pommin sijainti x-akselilla.
      * @param y pommin sijainti y-akselilla.
- */     
-    
+     */
+
     public void forceMakeBomb(int x, int y) {
         board[x][y].setBomb();
     }
@@ -79,12 +83,13 @@ public class MineField {
             }
         }
     }
-/**
- * Metodi laskee annetua ruutua ympäröivien ruutujen pommienmäärän
- * 
+
+    /**
+     * Metodi laskee annetua ruutua ympäröivien ruutujen pommienmäärän
+     *
      * @param tile annettu ruutu.
      * @return naapurissa olevien pommien määrä.
- */     
+     */
     public int countNeigborBombs(Tile tile) {
         int value = 0;
         for (Tile suroundingTile : getSuroundingTiles(tile)) {
@@ -118,6 +123,18 @@ public class MineField {
 
     public Tile[][] getBoard() {
         return board;
+    }
+
+    public boolean checkWinner() {
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
+                Tile current = board[x][y];
+                if (!current.isBomb() && !current.isRevealed()) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public int getSize() {

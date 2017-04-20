@@ -1,12 +1,11 @@
 package catsweeper.logiikka;
 
-import java.util.Observable;
 
 /**
  * Luokka on ilmentymä miinaharavan ruudusta.
  */
 
-public class Tile extends Observable {
+public class Tile {
 
     private int value;
     private int x;
@@ -48,6 +47,10 @@ public class Tile extends Observable {
             flagged = true;
         }
     }
+    
+    public void unflag() {
+        flagged = false;
+    }
 
     public boolean isFlagged() {
         return flagged;
@@ -80,6 +83,8 @@ public class Tile extends Observable {
         }
         return true;
     }
+
+
 
     public boolean isBomb() {
         if (value == 9) {
