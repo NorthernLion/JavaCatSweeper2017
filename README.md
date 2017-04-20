@@ -9,5 +9,5 @@
 * [Testausdokumentti](dokumentaatio/testausdokumentti.md)
 
 ## Raportit
-* [Pit](https://htmlpreview.github.io/?https://github.com/NorthernLion/JavaCatSweeper2017/blob/master/dokumentaatio/pit-raportti/201704062124/index.html)
+* [Pit](https://htmlpreview.github.io/?https://github.com/NorthernLion/JavaCatSweeper2017/blob/master/dokumentaatio/pit-raportti/201704201726/index.html)
 * [CheckStyle](https://htmlpreview.github.io/?https://github.com/NorthernLion/JavaCatSweeper2017/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)
