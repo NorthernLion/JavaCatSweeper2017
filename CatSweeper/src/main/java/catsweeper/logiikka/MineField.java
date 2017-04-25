@@ -3,8 +3,7 @@ package catsweeper.logiikka;
 import java.util.*;
 
 /**
- * Luokka on ilmentymä laudasta suurin osa kaikesta sovelluslogiikasta tehdään
- * lauta tasolla.
+ * Luokka on ilmentymä miinaharavan laudasta. Laudalla on lista kaikista ruuduista.
  */
 public class MineField {
 
@@ -14,33 +13,25 @@ public class MineField {
     private Random random;
 
     /**
-     * @param size on pelilaudan leveyttä ja pituutta kuvaava arvo. Pelilauta on
-     * siis neliö.
+     * Metodi on konstruktori.
+     * @param size on pelilaudan leveyttä ja pituutta kuvaava arvo.
      */
     public MineField(int size) {
         this.size = size;
         this.chance = 0.15;
         this.board = new Tile[size][size];
         random = new Random();
-        //printout();
     }
 
     /**
      * Metodi on laudan alustukseen käytettävä apumetodi.
+     * Se alustaa ensin pommit ja sen jälkeen laskee ruuduille arvot.
      */
     public void initialize() {
         fieldInitializeBombs();
         fieldInitializeNumbers();
     }
 
-//    public void printout(){
-//        for (int x = 0; x < size; x++) {
-//            for (int y = 0; y < size; y++) {
-//                System.out.print(field[x][y].toString());
-//            }
-//            System.out.println("");
-//        }        
-//    }
     /**
      * Metodi käy läpi laudan ja kutsuu Tilen alustavaa metodia ja asettaa
      * pommit todennäköisyyden mukaan.
@@ -52,28 +43,33 @@ public class MineField {
                 fieldInitializeTiles(x, y);
                 if (random.nextDouble() < chance) {
                     board[x][y].setBomb();
-                    // System.out.println("pommi:" + x + y);
                 }
             }
         }
     }
-    //Täytyy jakaa useampaan osaan! Kaksi toiminnallisuutta!!!
-
+    
+     /**
+     * Metodi alustaa Tilen annetuilla koordinaateilla ja sijoittaa sen laudalle.
+     *
+     * @param x ruudun sijainti x-akselilla.
+     * @param y ruudun sijainti y-akselilla. 
+     */   
     public void fieldInitializeTiles(int x, int y) {
         board[x][y] = new Tile(x, y);
     }
 
     /**
-     * Metodi tekee annetusta ruudusta pommin
+     * Metodi tekee annetusta ruudusta pommin.
      *
      * @param x pommin sijainti x-akselilla.
      * @param y pommin sijainti y-akselilla.
      */
-
     public void forceMakeBomb(int x, int y) {
         board[x][y].setBomb();
     }
-
+    /**
+     * Metodi käy läpi laudan kaikki ruudut ja laskee sen arvon apumetodilla.
+     */
     public void fieldInitializeNumbers() {
         for (int x = 0; x < size; x++) {
             for (int y = 0; y < size; y++) {
@@ -85,7 +81,7 @@ public class MineField {
     }
 
     /**
-     * Metodi laskee annetua ruutua ympäröivien ruutujen pommienmäärän
+     * Metodi laskee annetua ruutua ympäröivien ruutujen pommienmäärän.
      *
      * @param tile annettu ruutu.
      * @return naapurissa olevien pommien määrä.
@@ -99,7 +95,12 @@ public class MineField {
         }
         return value;
     }
-
+    /**
+     * Metodi palauttaa annettua ruutua ympäröivät ruudut.
+     *
+     * @param tile annettu ruutu.
+     * @return surounders ympäröivät ruudut listana.
+     */
     public List<Tile> getSuroundingTiles(Tile tile) {
         ArrayList<Tile> surounders = new ArrayList<>();
         int x = tile.getX();
@@ -124,7 +125,11 @@ public class MineField {
     public Tile[][] getBoard() {
         return board;
     }
-
+    /**
+     * Metodi tarkistaa onko kaikki pommittomat ruudut avattu.
+     * Jos on voitat pelin
+     * @return true jos voittaja false jos ei.
+     */
     public boolean checkWinner() {
         for (int x = 0; x < size; x++) {
             for (int y = 0; y < size; y++) {

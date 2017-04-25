@@ -24,6 +24,23 @@ public class MineSweeperGameTest {
 
     @Test
     public void sizeInGameAndFieldAreTheSame() {
+        readyMade.fieldCreator();
         assertEquals(readyMade.getField().getSize(), readyMade.getSize());
+    }
+
+    @Test
+    public void SetSizeWorks() {
+        readyMade.setSize(5);
+        assertEquals(readyMade.getSize(), 5);
+    }
+
+    @Test
+    public void settingSizeFromStringWorks() {
+        readyMade.setAskedSizeFromAnswer("medium");
+        assertEquals(readyMade.getSize(), 10);
+        readyMade.setAskedSizeFromAnswer("small");
+        assertEquals(readyMade.getSize(), 5);
+        readyMade.setAskedSizeFromAnswer("large");
+        assertEquals(readyMade.getSize(), 15);
     }
 }

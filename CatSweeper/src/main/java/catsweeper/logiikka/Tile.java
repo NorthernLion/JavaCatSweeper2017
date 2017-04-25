@@ -13,6 +13,7 @@ public class Tile {
     private boolean revealed;
     private boolean flagged;
 /**
+ * Metodi on konstruktori.
  * @param x on ruudun x akselilla sijainti laudalla.
  * @param y on ruudun y akselilla sijainti laudalla.
  */
@@ -47,7 +48,9 @@ public class Tile {
             flagged = true;
         }
     }
-    
+/**
+ * Metodi merkkaa ruudun liputtomaksi.
+ */    
     public void unflag() {
         flagged = false;
     }
@@ -83,9 +86,12 @@ public class Tile {
         }
         return true;
     }
-
-
-
+    
+    /**
+ * Metodi kertoo onko ruudussa pommi.
+ * 
+     * @return true jos on, false jos ei ole.
+ */
     public boolean isBomb() {
         if (value == 9) {
             return true;
@@ -93,7 +99,9 @@ public class Tile {
             return false;
         }
     }
-
+/**
+ * Metodi tekee ruudusta pommin.
+ */
     public void setBomb() {
         value = 9;
     }
