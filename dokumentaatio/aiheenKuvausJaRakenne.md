@@ -27,7 +27,7 @@ yhtään kissaa paljastuu tämä ruutu.
 ![Sekvenssikaavio puuttuu kuvat tiedostosta, korjataan pian!](/dokumentaatio/kuvat/Merkkaa%20ruutu%20lipulla.png)
 
 
-**Rakenne kuvaus**
+**Rakennekuvaus**
 
 Tile on rakenteen peruspilari. Se kuvaa miinaharavan ruutua, jolla on arvo ja koordinaatit. Sen voi myös olla liputettu, paljastettu ja pommi. Pelilauta eli luokka MineField sisältää lautaan liittyvän logiikan. Sillä on private Tile[][]Boardi, johon kaikki Tilet kuuluvat. Luokka sisältää kaikki metodit pommien alustamiseen, ruutujen arvojen laskemiseen ja naapureiden selvittämiseen. Pelilauta luodaan MineSweeperGame luokassa. Peli luokka huolehtii laudan ja käyttöliittymän alustamisesta käyttäjän antaman koon mukaan.
 Grafiikka puolella UserInterface huolehtii koko käyttöliittymän rakentamisesta. ButtonMOuseListener puolestaan huolehtii hiiren painallusten rekisteröinnistä ja buttonien maalasimesta ja näyttämisestä.
